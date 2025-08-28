@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Report_module extends Model
+class ReportModule extends Model
 {
     use HasFactory;
     protected $parPage = 10;
+    protected $table = "reportmodules";
 
     protected $fillable = [
         'customer_name',

@@ -12,7 +12,7 @@
                         </h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('changes_histories.index') }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('change_histories.index') }}" class="btn btn-sm btn-primary">
                             <i class="fas fa list"></i> Volver
                         </a>
                     </div>
@@ -80,6 +80,24 @@
                             </div>
                         </div>
                     </div>
+
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="case_customer_id" class="form-control-label">
+                                    <i class="fas fa-user">Caso cliente</i>
+                                </label>
+                                <p>{{ $change_histories->case_customer->id }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
 
 
                 </div>

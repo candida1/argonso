@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Reports_moduleRequest extends FormRequest
+class ReportModuleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class Reports_moduleRequest extends FormRequest
         'assigned_attomey'=>'required|string|min:10|max:255',
         'status_case'=>'required|string|min:10|max:255',
         'date_writting'=>'required',
-        'type_report'=>'required|string|min:10|max:255',
+        'type_report'=>'required|string|min:3|max:255',
 
         ];
     }
@@ -54,7 +54,7 @@ class Reports_moduleRequest extends FormRequest
 
         'type_report.required'=>'El tipo de reporte es requerida',
         'type_report.string'=>'Solo se permiten caracteres',
-        'type_report.min'=>'El tipo de reporte  debe contener al menos 10 caracteres',
+        'type_report.min'=>'El tipo de reporte  debe contener al menos 3 caracteres',
         'type_report.max'=>'El tipo de reporte no puede contener mas de 255 caracteres ',
 
 

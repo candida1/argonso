@@ -23,12 +23,12 @@ class AgendaRequest extends FormRequest
     {
         return [
         'event_name'=>'required|string|min:10|max:255',
-        'description'=>'required|string|min:20|max:255',
+        'description'=>'required|string|min:5|max:255',
         'date'=>'required|min:6',
         'time'=>'required',
         'duration'=>'required|min:5|max:20',
-        'place'=>'required|min:10|max:255',
-        'event_status'=>'required|string|min:10|max:20',
+        'place'=>'required|min:3|max:255',
+        'event_status'=>'required|string|min:5|max:20',
         'customer_id'=>'required',
 
         ];
@@ -39,7 +39,7 @@ class AgendaRequest extends FormRequest
         return[
         'event_name.required'=>'El nombre del evento es requerido',
         'event_name.string'=>'Solo se permiten caracteres',
-        'event_name.min'=>'El nombre del evento debe contener al menos 10 caracteres',
+        'event_name.min'=>'El nombre del evento debe contener al menos 5 caracteres',
         'event_name.max'=>'El nombre del evento no puede contener mas de 255 caracteres ',
 
         'description.required'=>'La descripcion del evento es requerido',

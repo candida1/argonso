@@ -26,20 +26,24 @@
                                 <th scope="col">Tipo de actividad</th>
                                 <th scope="col">Lugar de actividad</th>
                                 <th scope="col">Estado de la actividad</th>
+                                <th scope="col">Abogado</th>
+                                <th scope="col">Reporte de Modulo</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($activities as $activity)
                                 <tr>
-                                    <td>{{ $career->date_activity }}</td>
-                                    <td>{{ $career->time }}</td>
-                                    <td>{{ $career->name_activity }}</td>
-                                    <td>{{ $career->description }}</td>
-                                    <td>{{ $career->attached_documents }}</td>
-                                    <td>{{ $career->type_activity }}</td>
-                                    <td>{{ $career->place }}</td>
-                                    <td>{{ $career->state }}</td>
+                                    <td>{{ $activity->date_activity }}</td>
+                                    <td>{{ $activity->time }}</td>
+                                    <td>{{ $activity->name_activity }}</td>
+                                    <td>{{ $activity->description }}</td>
+                                    <td>{{ $activity->attached_documents }}</td>
+                                    <td>{{ $activity->type_activity }}</td>
+                                    <td>{{ $activity->place }}</td>
+                                    <td>{{ $activity->state }}</td>
+                                    <td>{{ $activity->lawyer->name }}</td>
+                                    <td>{{ $activity->reportmodule->customer_name}}</td>
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
                                         <a href="{{ route('activities.show', $activity->id) }}"

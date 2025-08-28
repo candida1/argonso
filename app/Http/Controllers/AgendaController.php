@@ -14,8 +14,8 @@ class AgendaController
      */
     public function index()
     {
-        $agendas= Agenda::with ('customers')->paginate(10);
-        return view ('agendas.index',compact('customers'));
+        $agendas= Agenda::with ('customer')->paginate(10);
+        return view ('agendas.index',compact('agendas'));
     }
 
     /**
@@ -63,7 +63,7 @@ class AgendaController
      */
     public function update(AgendaRequest $request, int $id)
     {
-        $agendas= agenda::find($id);
+        $agendas= Agenda::find($id);
         $agendas->update($request->validated());
         return redirect()->route('agendas.index')->with('updated','La agenda ha sido actualizada con éxito');
     }
@@ -73,7 +73,7 @@ class AgendaController
      */
     public function destroy(int $id)
     {
-        $agendas= agenda::find($id);
+        $agendas= Agenda::find($id);
         $agendas->delete();
         return redirect()->route('agendas.index')->with('deleted','La agenda ha sido eliminada con éxito');
     }

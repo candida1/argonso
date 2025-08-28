@@ -24,15 +24,15 @@ class ActivityRequest extends FormRequest
     {
         return [
         'date_activity'=>'required|string|min:10|max:255',
-        'time'=>'required|string|min:20|max:255',
-        'name_activity'=>'required|string|min:10|max:255',
-        'description'=>'required|string|min:20|max:255',
-        'attached_documents'=>'required|string|min:20|max:255',
-        'type_activity'=>'required|string|min:10|max:255',
-        'place'=>'required|string|min:10|max:255',
-        'state'=>'required|string|min:10|max:255',
+        'time'=>'required',
+        'name_activity'=>'required|string|max:255',
+        'description'=>'required|string|min:3|max:255',
+        'attached_documents'=>'required|string|max:255',
+        'type_activity'=>'required|max:255',
+        'place'=>'required|string|max:255',
+        'state'=>'required|string|max:255',
         'lawyer_id'=>'required',
-        'report_module_id'=>'required',
+        'reportmodule_id'=>'required',
 
         ];
     }
@@ -47,7 +47,7 @@ class ActivityRequest extends FormRequest
         'date_activity.max'=>'El nombre de la actividad no puede contener mas de 255 caracteres ',
 
         'time.required'=>'La hora de la actividad es requerida',
-        'time.min'=>'La hora de la actividad debe contener al menos 4 caracteres',
+
 
         'name_activity.required'=>'El nombre de la actividad es requerida',
         'name_activity.string'=>'Solo se permiten caracteres',
@@ -61,12 +61,10 @@ class ActivityRequest extends FormRequest
 
         'attached_documents.required'=>'Los documentos adjuntos son requeridos',
         'attached_documents.string'=>'Solo se permiten caracteres',
-        'attached_documents.min'=>'Los documentos adjuntos deben contener al menos 20 caracteres',
         'attached_documents.max'=>'Los documentos adjuntos no puede contener mas de 255 caracteres ',
 
         'type_activity.required'=>'El tipo de actividad es requerido',
         'type_activity.string'=>'Solo se permiten caracteres',
-        'type_activity.min'=>'El tipo de actividad debe contener al menos 10 caracteres',
         'type_activity.max'=>'El tipo de actividad no puede contener mas de 255 caracteres ',
 
         'place.required'=>'El lugar de la actividad es requerido',

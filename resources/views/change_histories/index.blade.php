@@ -23,6 +23,7 @@
                                 <th scope="col">Abogado asignado</th>
                                 <th scope="col">Acción tomada</th>
                                 <th scope="col">Razón de cambio</th>
+                                <th scope="col">Caso cliente</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
@@ -34,6 +35,7 @@
                                     <td>{{ $change_history->assigned_attorner }}</td>
                                     <td>{{ $change_history->action_taken}}</td>
                                     <td>{{ $change_history->reason_change }}</td>
+                                    <td>{{ $change_history->case_customer->file_number }}</td>
 
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">

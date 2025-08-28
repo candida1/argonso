@@ -69,7 +69,7 @@ class DocumentController
      */
     public function destroy(int $id)
     {
-        $documents= Documents::find($id);
+        $documents= Document::find($id);
         $documents->delete();
         return redirect()->route('documents.index')->with('deleted','Documento ha sido eliminado con éxito');
     }

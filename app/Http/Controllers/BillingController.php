@@ -14,8 +14,8 @@ class BillingController
      */
     public function index()
     {
-        $billings= Billing::with ('case_customers')->paginate(10);
-        return view ('billings.index',compact('case_customers'));
+        $billings= Billing::with ('case_customer')->paginate(10);
+        return view ('billings.index',compact('billings'));
     }
 
     /**

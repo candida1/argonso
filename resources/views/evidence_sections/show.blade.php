@@ -49,10 +49,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="registration" class="form-control-label">
+                                <label for="registration_date" class="form-control-label">
                                     <i class="fas fa-user">Fecha de registro</i>
                                 </label>
-                                <p>{{ $evidence_sections->registration }}</p>
+                                <p>{{ $evidence_sections->registration_date }}</p>
                             </div>
                         </div>
                     </div>

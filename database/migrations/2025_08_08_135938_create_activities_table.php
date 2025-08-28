@@ -26,8 +26,8 @@ return new class extends Migration
             $table->foreign('lawyer_id')->references('id')->on('lawyers')
             ->onUpdate('cascade')->onDelete('cascade');
 
-            $table->integer('report_module_id')->unsigned();
-            $table->foreign('report_module_id')->references('id')->on('report_modules')
+            $table->integer('reportmodule_id')->unsigned();
+            $table->foreign('reportmodule_id')->references('id')->on('reportmodules')
             ->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();

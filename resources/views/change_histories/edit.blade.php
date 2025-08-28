@@ -22,7 +22,7 @@
             <form action="{{ route("change_histories.update", $change_histories->id) }}" method="POST">
                 @csrf
                 @method('PUT')
-                @include('change_hisories.form')
+                @include('change_histories.form')
             </form>
         </div>
     </div>

@@ -29,10 +29,10 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="registration">Fecha de registro</label>
-                <input type="date" id="registration" name="registration" class="form-control form-control-alternative"
-                placeholder="Ingresar la fecha de registro del documento"
-                value="{{ old('registration', $evidence_sections->registration)}}">
+                <label class="form-control-label" for="registration_date">Fecha de registro</label>
+                <input type="date" id="registration_date" name="registration_date" class="form-control form-control-alternative"
+                placeholder="Ingresar la descripción del documento"
+                value="{{ old('registration_date', $evidence_sections->registration_date)}}">
             </div>
         </div>
     </div>
@@ -56,12 +56,11 @@
 
 <hr class="my-4"/>
 
-<h6 class="heading-small text-muted mb-4">Guardar</h6>
 
 <div class="pl-lg-4">
     <div class="form-group">
         <button type="submit" class="btn btn-primary">
-            <i class="fas fa-save"></i>Guardar Evidencia
+            <i class="fas fa-save"></i> Guardar Evidencia
         </button>
     </div>
 </div>

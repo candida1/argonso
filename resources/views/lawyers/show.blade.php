@@ -101,28 +101,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label for="registration_date" class="form-control-label">
-                                    <i class="fas fa-user">Fecha de registro</i>
-                                </label>
-                                <p>{{ $lawyers->registration_date }}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label for="responsible" class="form-control-label">
-                                    <i class="fas fa-user">Responsable</i>
-                                </label>
-                                <p>{{ $lawyers->responsible }}</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 

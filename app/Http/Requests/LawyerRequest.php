@@ -42,10 +42,10 @@ class LawyerRequest extends FormRequest
             'name.min'=>'El nombre debe contener al menos 20 caracteres',
             'name.max'=>'El nombre no puede contener mas de 255 caracteres',
 
-            'last_name.required'=>'El apellido del abogado es requerido',
-            'last_name.string'=>'Solo se permiten caracteres',
-            'last_name.min'=>'El apellido debe contener al menos 20 caracteres',
-            'last_name.max'=>'El apellido no puede contener mas de 255 caracteres',
+            'lastname.required'=>'El apellido del abogado es requerido',
+            'lastname.string'=>'Solo se permiten caracteres',
+            'lastname.min'=>'El apellido debe contener al menos 20 caracteres',
+            'lastname.max'=>'El apellido no puede contener mas de 255 caracteres',
 
             'gender.required'=>'El genero del abogado es requerida',
 

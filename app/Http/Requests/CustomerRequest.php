@@ -23,12 +23,12 @@ class CustomerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|string|min:20|max:255.',
-            'last_name'=>'required|string|min:20|max:255',
+            'name'=>'required|string|max:255.',
+            'lastname'=>'required|string|max:255',
             'gender'=>'required',
             'identity_card'=>['nullable','string','min:16','max:20',Rule::unique('customers')->ignore($this->customer)],
-            'telephone'=>'nullable|string|min:15',
-            'address'=>'required|string|min:100|max:255',
+            'telephone'=>'nullable|min:10',
+            'address'=>'required|string|max:255',
             'email'=>['required','string','max:255',Rule::unique('customers')->ignore($this->customer)],
             'registration_date'=>'required|min:6'
         ];
@@ -42,10 +42,9 @@ class CustomerRequest extends FormRequest
             'name.min'=>'El nombre debe contener al menos 20 caracteres',
             'name.max'=>'El nombre no puede contener mas de 255 caracteres',
 
-            'last_name.required'=>'El apellido del cliente es requerido',
-            'last_name.string'=>'Solo se permiten caracteres',
-            'last_name.min'=>'El apellido debe contener al menos 20 caracteres',
-            'last_name.max'=>'El apellido no puede contener mas de 255 caracteres',
+            'lastname.required'=>'El apellido del cliente es requerido',
+            'lastname.string'=>'Solo se permiten caracteres',
+            'lastname.max'=>'El apellido no puede contener mas de 255 caracteres',
 
             'gender.required'=>'El genero del cliente es requerida',
 
@@ -56,8 +55,7 @@ class CustomerRequest extends FormRequest
 
 
             'telephone.required'=>'El número de telefono es requerido',
-            'telephone.string'=>'El número de telefono del cliente solo permite caracteres',
-            'telephone.min'=>'El minimo de caracteres del telefono necesarios es de 15',
+            'telephone.min'=>'El minimo de caracteres del telefono necesarios es de 10',
 
 
             'address.required'=>'La direccion del cliente es requerida.',

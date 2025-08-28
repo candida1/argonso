@@ -25,10 +25,10 @@ class BillingRequest extends FormRequest
         return [
         'issue_date'=>'required|min:6',
         'expiration_date'=>'required|min:6',
-        'total_amount'=>'required|min:20|max:255',
-        'payment_status'=>'required|string|min:20|max:255',
-        'payment_method'=>'required|string|min:20|max:255',
-        'invoice_number'=>['required','min:6',Rule::unique('billings')->ignore($this->billing)],
+        'total_amount'=>'required|min:5|max:255',
+        'payment_status'=>'required|max:255',
+        'payment_method'=>'required|max:255',
+        'invoice_number'=>['required','max:255',Rule::unique('billings')->ignore($this->billing)],
         'case_customer_id'=>'required',
 
         ];
@@ -45,8 +45,8 @@ class BillingRequest extends FormRequest
         'expiration_date.min'=>'La fecha de expiracion del asunto debe contener al menos 6 caracteres',
 
         'total_amount.required'=>'La descripcion del evento es requerido',
-        'total_amount.min'=>'La descripcion del evento debe contener al menos 20 caracteres',
-        'total_amount.max'=>'La descripcion del evento no puede contener mas de 255 caracteres ',
+        'total_amount.min'=>'La cantidad total debe contener mas de 20 caracteres',
+        'total_amount.max'=>'La cantidad total debe contener mas de 255 caracteres ',
 
         'payment_status.required'=>'El estado de pago es requerido',
         'payment_status.string'=>'Solo se permiten caracteres',

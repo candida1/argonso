@@ -24,6 +24,7 @@
                                 <th scope="col">Estado de pago</th>
                                 <th scope="col">Metodo de pago</th>
                                 <th scope="col">Número de factura</th>
+                                <th scope="col">Caso cliente</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
@@ -36,7 +37,7 @@
                                     <td>{{ $billing->payment_status }}</td>
                                     <td>{{ $billing->payment_method }}</td>
                                     <td>{{ $billing->invoice_number }}</td>
-
+                                    <td>{{ $billing->case_customer->file_number}}</td>
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
                                         <a href="{{ route('billings.show', $billing->id) }}"

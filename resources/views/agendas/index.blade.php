@@ -25,6 +25,7 @@
                                 <th scope="col">Duración</th>
                                 <th scope="col">Lugar</th>
                                 <th scope="col">Estado del evento</th>
+                                <th scope="col">Cliente</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
@@ -35,8 +36,10 @@
                                     <td>{{ $agenda->description }}</td>
                                     <td>{{ $agenda->date }}</td>
                                     <td>{{ $agenda->time }}</td>
+                                    <td>{{ $agenda->duration }}</td>
                                     <td>{{ $agenda->place }}</td>
                                     <td>{{ $agenda->event_status }}</td>
+                                    <td>{{ $agenda->customer->name}}</td>
 
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">

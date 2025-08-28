@@ -58,7 +58,7 @@ class CustomerController
      */
     public function update(CustomerRequest $request, int $id)
     {
-        $customers= Customers::find($id);
+        $customers= Customer::find($id);
         $customers->update($request->validated());
         return redirect()->route('customers.index')->with('updated','Cliente actualizado con éxito');
     }

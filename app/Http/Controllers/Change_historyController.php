@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Change_history;
-use App\Http\Requests\Chanhe_historyRequest;
+use App\Http\Requests\Change_historyRequest;
 use App\Models\Case_customer;
 
 class Change_historyController
@@ -14,8 +14,8 @@ class Change_historyController
      */
     public function index()
     {
-        $change_histories= Change_history::with ('case_customers')->paginate(10);
-        return view ('change_histories.index',compact('case_customers'));
+        $change_histories= Change_history::with ('case_customer')->paginate(10);
+        return view ('change_histories.index',compact('change_histories'));
     }
 
     /**

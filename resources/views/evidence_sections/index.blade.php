@@ -8,7 +8,7 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Evidencias</h3>
-                        <a href="{{ route('customers.create') }}" class="btn btn-primary">
+                        <a href="{{ route('evidence_sections.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus"> Nueva Evidencia</i>
                         </a>
                     </div>
@@ -20,7 +20,7 @@
                             <tr>
                                 <th scope="col">Tipo de evidencia</th>
                                 <th scope="col">Descripción</th>
-                                <th scope="col">Registration</th>
+                                <th scope="col">Fecha de registro</th>
                                 <th scope="col">Estado de evidencia</th>
                                 <th scope="col">Acciones</th>
                             </tr>
@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{ $evidence_section->type_evidence }}</td>
                                     <td>{{ $evidence_section->description }}</td>
-                                    <td>{{ $evidence_section->registration }}</td>
+                                    <td>{{ $evidence_section->registration_date }}</td>
                                     <td>{{ $evidence_section->state_evidence }}</td>
 
 

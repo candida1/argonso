@@ -23,9 +23,9 @@ class Lawyer extends Model
 
     ];
 
-    public function activities ()
+    public function activity ()
     {
-        return $this->hasMany (Activity::class);
+        return $this->hasOne (Activity::class);
     }
 
     public function case_customer ()

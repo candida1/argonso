@@ -23,11 +23,11 @@ class Case_customerRequest extends FormRequest
     {
         return [
         'file_number'=>'required',
-        'type_case'=>'required|string|min:20|max:255',
+        'type_case'=>'required|string|min:3|max:255',
         'opening_date'=>'required|min:6',
-        'status_case'=>'required|string|min:10|max:255',
+        'status_case'=>'required|string|min:3|max:255',
         'description'=>'required|string|min:10|max:255',
-        'priority'=>'required|string|min:10|max:255',
+        'priority'=>'required|string|min:3|max:255',
         'customer_id'=>'required',
         'lawyer_id'=>'required'
 
@@ -42,7 +42,7 @@ class Case_customerRequest extends FormRequest
 
         'type_case.required'=>'El tipo de caso es requerido',
         'type_case.string'=>'Solo se permiten caracteres',
-        'type_case.min'=>'El tipo de caso debe contener al menos 20 caracteres',
+        'type_case.min'=>'El tipo de caso debe contener al menos 3 caracteres',
         'type_case.max'=>'El tipo de caso no puede contener mas de 255 caracteres ',
 
         'opening-date.required'=>'La fecha de apertura del caso es requerida',
@@ -50,7 +50,7 @@ class Case_customerRequest extends FormRequest
 
         'status_case.required'=>'El estado del caso es requerido',
         'status_case.string'=>'Solo se permiten caracteres',
-        'status.min'=>'El estado del caso debe contener al menos 10 caracteres',
+        'status.min'=>'El estado del caso debe contener al menos 3 caracteres',
         'status.max'=>'El estado del caso no puede contener mas de 255 caracteres ',
 
         'description.required'=>'La descripcion del caso es requerido',
@@ -60,7 +60,7 @@ class Case_customerRequest extends FormRequest
 
         'priority.required'=>'La prioridad del caso es requerido',
         'priority.string'=>'Solo se permiten caracteres',
-        'priority.min'=>'La prioridad del caso debe contener al menos 10 caracteres',
+        'priority.min'=>'La prioridad del caso debe contener al menos 3 caracteres',
         'priority.max'=>'La prioridad del caso no puede contener mas de 255 caracteres ',
 
         'customer.required'=>'El nombre del cliente es requerido',

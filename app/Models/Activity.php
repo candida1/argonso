@@ -20,7 +20,7 @@ class Activity extends Model
         'place',
         'state',
         'lawyer_id',
-        'reports_module_id'
+        'reportmodule_id'
     ];
 
     public function lawyer ()
@@ -28,9 +28,9 @@ class Activity extends Model
         return $this->belongsTo (Lawyer::class);
     }
 
-    public function report_module ()
+    public function reportmodule ()
     {
-        return $this->belongsTo (Report_module::class);
+        return $this->belongsTo (ReportModule::class);
     }
 
 

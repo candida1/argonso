@@ -105,6 +105,20 @@
                     </div>
 
 
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="name" class="form-control-label">
+                                    <i class="fas fa-user">Cliente</i>
+                                </label>
+                                <p>{{ $agendas->customer->name }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
 

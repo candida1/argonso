@@ -29,13 +29,13 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label for="name">Nombre de la actividad</label>
-                <select name="name" id="name" class="form-control">
+                <label for="name_activity">Nombre de la actividad</label>
+                <select name="name_activity" id="name_activity" class="form-control">
                     <option value="" disabled>Seleccionar el nombre de la actividad</option>
-                    <option value="Registro Civil" {{ old('name', $activities->name ?? '') == 'Registro civil' ? 'selected' : '' }}>Registro civil</option>
-                    <option value="Tramitación de denuncias y demandas" {{ old('name', $activities->name ?? '') == 'Tramitación de denuncias y demandas' ? 'selected' : '' }}>Tramitación de denuncias y demandas</option>
-                    <option value="Fiscalización Electoral" {{ old('name', $activities->name ?? '') == 'Fiscalización Electoral' ? 'selected' : '' }}>Fiscalización Electoral</option>
-                    <option value="Otorgamiento de licencias de conducir y matriculas de vehiculos" {{ old('name', $activities->name ?? '') == 'Otorgamiento de licencias de conducir y matriculas de vehiculos' ? 'selected' : '' }}>Otorgamiento de licencias de conducir y matriculas de vehiculos</option>
+                    <option value="Registro Civil" {{ old('name_activity', $activities->name_activity ?? '') == 'Registro civil' ? 'selected' : '' }}>Registro civil</option>
+                    <option value="Tramitación de denuncias y demandas" {{ old('name_activity', $activities->name_activity ?? '') == 'Tramitación de denuncias y demandas' ? 'selected' : '' }}>Tramitación de denuncias y demandas</option>
+                    <option value="Fiscalización Electoral" {{ old('name_activity', $activities->name_activity ?? '') == 'Fiscalización Electoral' ? 'selected' : '' }}>Fiscalización Electoral</option>
+                    <option value="Otorgamiento de licencias de conducir y matriculas de vehiculos" {{ old('name_activity', $activities->name_activity ?? '') == 'Otorgamiento de licencias de conducir y matriculas de vehiculos' ? 'selected' : '' }}>Otorgamiento de licencias de conducir y matriculas de vehiculos</option>
                 </select>
             </div>
         </div>
@@ -47,7 +47,7 @@
             <div class="form-group">
                 <label class="form-control-label" for="description">Descripción</label>
                 <input type="text" id="description" name="description" class="form-control form-control-alternative"
-                placeholder="Ingresar la hora de la actividad"
+                placeholder="Ingresar la descripcion de la actividad"
                 value="{{ old('description', $activities->description)}}">
             </select>
             </div>
@@ -68,6 +68,21 @@
             </div>
         </div>
    </div>
+
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="form-control-label" for="type_activity">Tipo de actividad</label>
+                <input type="text" id="type_activity" name="type_activity" class="form-control form-control-alternative"
+                placeholder="Ingresar el tipo de actividad"
+                value="{{ old('type_activity', $activities->type_activity)}}">
+            </select>
+            </div>
+        </div>
+    </div>
+
 
     <div class="row">
         <div class="col-lg-6">
@@ -103,7 +118,7 @@
                 <label class="form-control-label" for="lawyer_id">Abogado</label>
                 <select name="lawyer_id" id="lawyer_id" class="form-control">
                     @foreach($lawyers as $lawyer)
-                        <option value="{{ $lawyer->id }}" {{ old('lawyer_id', $equipment->lawyer_id ?? '') == $lawyer->id ? 'selected' : '' }}>{{ $lawyer->name }}</option>
+                        <option value="{{ $lawyer->id }}" {{ old('lawyer_id', $activities->lawyer_id ?? '') == $lawyer->id ? 'selected' : '' }}>{{ $lawyer->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -113,10 +128,10 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="reports_module_id">Modulo de reportes</label>
-                <select name="reports_module_id" id="reports_module_id" class="form-control">
-                    @foreach($reports_modules as $reports_module)
-                        <option value="{{ $reports_module->id }}" {{ old('reports_module_id', $equipment->reports_module_id ?? '') == $reports_module->id ? 'selected' : '' }}>{{ $reports_module->name }}</option>
+                <label class="form-control-label" for="reportmodule_id">Modulo de reportes</label>
+                <select name="reportmodule_id" id="reportmodule_id" class="form-control">
+                    @foreach($reportmodules as $reportmodule)
+                        <option value="{{ $reportmodule->id }}" {{ old('reportmodule_id', $activities->reportmodule_id ?? '') == $reportmodule->id ? 'selected' : '' }}>{{ $reportmodule->customer_name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -129,12 +144,10 @@
 
 <hr class="my-4"/>
 
-<h6 class="heading-small text-muted mb-4">Guardar</h6>
-
 <div class="pl-lg-4">
     <div class="form-group">
         <button type="submit" class="btn btn-primary">
-            <i class="fas fa-save"></i>Guardar Actividad
+            <i class="fas fa-save"></i> Guardar Actividad
         </button>
     </div>
 </div

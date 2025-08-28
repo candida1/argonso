@@ -22,10 +22,10 @@ class Evidence_sectionRequest extends FormRequest
     public function rules(): array
     {
         return [
-        'type_evidence'=>'required|string|min:10|max:255',
-        'description'=>'required|string|min:10|max:255',
-        'registration'=>'required',
-        'state_evidence'=>'required|string|min:10|max:255',
+        'type_evidence'=>'required|string|min:3|max:255',
+        'description'=>'required|string|min:5|max:255',
+        'registration_date'=>'required',
+        'state_evidence'=>'required|string|min:3|max:255',
 
         ];
     }
@@ -40,14 +40,14 @@ class Evidence_sectionRequest extends FormRequest
 
         'description.required'=>'La descripción de la evidencia es requerido',
         'description.string'=>'Solo se permiten caracteres',
-        'description.min'=>'La descripción de la evidencia debe contener al menos 10 caracteres',
+        'description.min'=>'La descripción de la evidencia debe contener al menos 5 caracteres',
         'description.max'=>'La descripción de la evidencia no puede contener mas de 255 caracteres ',
 
-        'registration.required'=>'El registro de la evidencia es requerido',
+        'registration_date.required'=>'El registro de la evidencia es requerido',
 
         'state_evidence.required'=>'El estado de la evidencia es requerido',
         'state_evidence.string'=>'Solo se permiten caracteres',
-        'state_evidence.min'=>'El estado de la evidencia debe contener al menos 10 caracteres',
+        'state_evidence.min'=>'El estado de la evidencia debe contener al menos . caracteres',
         'state_evidence.max'=>'El estado de la evidencia no puede contener mas de 255 caracteres ',
 
 

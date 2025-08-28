@@ -22,12 +22,12 @@ class Case_customer extends Model
     ];
 
 
-    public function customers ()
+    public function customer ()
     {
         return $this->belongsTo (Customer::class);
     }
 
-    public function lawyers ()
+    public function lawyer ()
     {
         return $this->belongsTo (Lawyer::class);
     }

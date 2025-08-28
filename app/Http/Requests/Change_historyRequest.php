@@ -24,7 +24,7 @@ class Change_historyRequest extends FormRequest
         return [
         'date'=>'required|min:6',
         'time'=>'required',
-        'assigned_attorner'=>'required|min:20',
+        'assigned_attorner'=>'required|min:5',
         'action_taken'=>'required|string|min:10|max:255',
         'reason_change'=>'required|string|min:10|max:255',
         'case_customer_id'=>'required',
@@ -42,7 +42,7 @@ class Change_historyRequest extends FormRequest
         'time.required'=>'La hora del cambio es requerida',
 
         'assigned_attorner.required'=>'El nombre del abogado asignado requerido',
-        'assigned_attorner.min'=>'El nombre del abogado asignado debe contener al menos 20 caracteres',
+        'assigned_attorner.min'=>'El nombre del abogado asignado debe contener al menos 5 caracteres',
 
         'action_taken.required'=>'La acción realizada es requerida',
         'action_taken.string'=>'Solo se permiten caracteres',

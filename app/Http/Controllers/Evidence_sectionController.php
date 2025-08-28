@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Evidence;
-use App\Http\Requests\CustomerRequest;
+use App\Models\Evidence_section;
+use App\Http\Requests\Evidence_sectionRequest;
 
 
-class Evidence_section
+class Evidence_sectionController
 {
     /**
      * Display a listing of the resource.

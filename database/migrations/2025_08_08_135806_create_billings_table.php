@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('payment_method');
             $table->string('invoice_number');
 
-            $table->integer('case_id')->unsigned();
-            $table->foreign('case_id')->references('id')->on('case_customers')
+            $table->integer('case_customer_id')->unsigned();
+            $table->foreign('case_customer_id')->references('id')->on('case_customers')
             ->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();

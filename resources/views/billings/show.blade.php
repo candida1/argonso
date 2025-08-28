@@ -93,6 +93,20 @@
                     </div>
 
 
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="case_customer" class="form-control-label">
+                                    <i class="fas fa-user">Caso cliente</i>
+                                </label>
+                                <p>{{ $billings->case_customer->file_number }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
 

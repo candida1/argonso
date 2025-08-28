@@ -121,10 +121,23 @@
                                 <label for="name" class="form-control-label">
                                     <i class="fas fa-user">Nombre del abogado</i>
                                 </label>
-                                <p>{{ $activities->lawyers->name }}</p>
+                                <p>{{ $activities->lawyer->name }}</p>
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="name" class="form-control-label">
+                                    <i class="fas fa-user">Modulo de reportes</i>
+                                </label>
+                                <p>{{ $activities->reportmodule->customer_name }}</p>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>

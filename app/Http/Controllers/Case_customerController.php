@@ -15,8 +15,8 @@ class Case_customerController
      */
     public function index()
     {
-        $case_customers= Case_customer::with ('customers','lawyers')->paginate(10);
-        return view ('case_customers.index',compact('customers','lawyers'));
+        $case_customers= Case_customer::with ('customer','lawyer')->paginate(10);
+        return view ('case_customers.index',compact('case_customers'));
     }
 
     /**
@@ -29,7 +29,7 @@ class Case_customerController
         $lawyers= lawyer::all();
         return view ('case_customers.create',compact('case_customers','customers','lawyers'));
     }
-    }
+
 
     /**
      * Store a newly created resource in storage.

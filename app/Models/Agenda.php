@@ -21,7 +21,7 @@ class Agenda extends Model
         'customer_id'
     ];
 
-    public function customers ()
+    public function customer ()
     {
         return $this->belongsTo (Customer::class);
     }

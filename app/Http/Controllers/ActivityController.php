@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Activity;
 use App\Models\Lawyer;
-use App\Models\Report_module;
+use App\Models\ReportModule;
 
 use App\Http\Requests\ActivityRequest;
 
@@ -18,7 +18,7 @@ class ActivityController
      */
     public function index()
     {
-        $activities= Activity::with ('laywer','report_module')->paginate(10);
+        $activities= Activity::with ('lawyer','reportmodule')->paginate(10);
         return view ('activities.index',compact('activities'));
     }
 
@@ -29,8 +29,8 @@ class ActivityController
     {
         $activities= new Activity();
         $lawyers= Lawyer::all();
-        $report_modules= Report_module::all();
-        return view ('activities.create',compact('activities_','lawyers','reports_modules'));
+        $reportmodules= ReportModule::all();
+        return view ('activities.create',compact('activities','lawyers','reportmodules'));
     }
 
     /**
@@ -49,7 +49,7 @@ class ActivityController
     {
         $activities= Activity::find($id);
         $lawyers= lawyer::all();
-        $reports_modules= report_module::all();
+        $reports_modules= ReportModule::all();
         return view ('activities.show',compact('activities','lawyers','reports_modules'));
     }
 
@@ -60,8 +60,8 @@ class ActivityController
     {
         $activities= Activity::find($id);
         $lawyers= lawyer::all();
-        $reports_modules= report_module::all();
-        return view ('activities.edit',compact('activities','lawyers','report_modules'));
+        $reportmodules= ReportModule::all();
+        return view ('activities.edit',compact('activities','lawyers','reportmodules'));
 
     }
 

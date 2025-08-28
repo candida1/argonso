@@ -5,12 +5,12 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label for="event_name">Nombre del evento</label>
-                <select name="name" id="name" class="form-control">
+                <select name="event_name" id="event_name" class="form-control">
                     <option value="" disabled>Seleccionar el nombre de el evento</option>
-                    <option value="Ceremonia de matrimonio civil" {{ old('name', $agendas->name ?? '') == 'Ceremonia de matrimonio civil' ? 'selected' : '' }}>Ceremonia de matrimonio civil</option>
-                    <option value="Inscripción de nacimiento" {{ old('name', $agendas->name ?? '') == 'Inscripción de nacimiento' ? 'selected' : '' }}>Inscripción de nacimiento</option>
-                    <option value="Registro de defunción" {{ old('name', $agendas->name ?? '') == 'Registro de defunción' ? 'selected' : '' }}>Registro de defunción</option>
-                    <option value="Ratificación de documentos" {{ old('name', $agendas->name ?? '') == 'Ratificación de documentos' ? 'selected' : '' }}>Ratificación de documentos</option>
+                    <option value="Ceremonia de matrimonio civil" {{ old('event_name', $agendas->event_name ?? '') == 'Ceremonia de matrimonio civil' ? 'selected' : '' }}>Ceremonia de matrimonio civil</option>
+                    <option value="Inscripción de nacimiento" {{ old('event_name', $agendas->event_name ?? '') == 'Inscripción de nacimiento' ? 'selected' : '' }}>Inscripción de nacimiento</option>
+                    <option value="Registro de defunción" {{ old('event_name', $agendas->event_name ?? '') == 'Registro de defunción' ? 'selected' : '' }}>Registro de defunción</option>
+                    <option value="Ratificación de documentos" {{ old('event_name', $agendas->event_name ?? '') == 'Ratificación de documentos' ? 'selected' : '' }}>Ratificación de documentos</option>
                 </select>
             </div>
         </div>
@@ -110,16 +110,18 @@
     </div>
 
 
+
+
 </div>
 
 <hr class="my-4"/>
 
-<h6 class="heading-small text-muted mb-4">Guardar</h6>
+
 
 <div class="pl-lg-4">
     <div class="form-group">
         <button type="submit" class="btn btn-primary">
-            <i class="fas fa-save"></i>Guardar Agenda
+            <i class="fas fa-save"></i> Guardar Agenda
         </button>
     </div>
 </div>

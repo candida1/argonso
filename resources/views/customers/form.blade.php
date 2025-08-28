@@ -46,8 +46,8 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="telephone">Número telfonico</label>
-                <input type="number" id="telephone" name="telephone" class="form-control form-control-alternative"
+                <label class="form-control-label" for="telephone">Número telefonico</label>
+                <input type="tel" id="telephone" name="telephone" class="form-control form-control-alternative"
                 placeholder="Ingrese su número telefonico"
                 value="{{ old('telephone', $customers->telephone)}}">
             </div>
@@ -92,12 +92,12 @@
 
 <hr class="my-4"/>
 
-<h6 class="heading-small text-muted mb-4">Guardar</h6>
+
 
 <div class="pl-lg-4">
     <div class="form-group">
         <button type="submit" class="btn btn-primary">
-            <i class="fas fa-save"></i>Guardar Cliente
+            <i class="fas fa-save"></i> Guardar Cliente
         </button>
     </div>
 </div>

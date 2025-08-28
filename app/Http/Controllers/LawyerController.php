@@ -50,7 +50,7 @@ class LawyerController
     public function edit(int $id)
     {
         $lawyers= Lawyer::find($id);
-        return view ('customers.edit',compact('customers'));
+        return view ('lawyers.edit',compact('lawyers'));
     }
 
     /**
@@ -58,7 +58,7 @@ class LawyerController
      */
     public function update(LawyerRequest $request, int $id)
     {
-        $lawyers= Lawyers::find($id);
+        $lawyers= Lawyer::find($id);
         $lawyers->update($request->validated());
         return redirect()->route('lawyers.index')->with('updated','Abogado actualizado con éxito');
     }

@@ -12,7 +12,7 @@
                         </h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('reports_module.index') }}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('reportmodules.index') }}" class="btn btn-sm btn-primary">
                             <i class="fas fa list"></i> Volver
                         </a>
                     </div>
@@ -29,7 +29,7 @@
                                 <label for="customer_name" class="form-control-label">
                                     <i class="fas fa-user"></i> Nombre del cliente
                                 </label>
-                                <p>{{ $reports_modules->customer_name }}</p>
+                                <p>{{ $reportmodules->customer_name }}</p>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                                 <label for="assigned_attomey" class="form-control-label">
                                     <i class="fas fa-user">Abogado asignado</i>
                                 </label>
-                                <p>{{ $reports_modules->assigned_attomey }}</p>
+                                <p>{{ $reportmodules->assigned_attomey }}</p>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                 <label for="status_case" class="form-control-label">
                                     <i class="fas fa-user">Estado del caso</i>
                                 </label>
-                                <p>{{ $reports_modules->status_case }}</p>
+                                <p>{{ $reportmodules->status_case }}</p>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 <label for="date_writting" class="form-control-label">
                                     <i class="fas fa-user">Fecha de redacción</i>
                                 </label>
-                                <p>{{ $reports_modules->date_writting }}</p>
+                                <p>{{ $reportmodules->date_writting }}</p>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                 <label for="type_report" class="form-control-label">
                                     <i class="fas fa-user">Tipo de reporte</i>
                                 </label>
-                                <p>{{ $reports_modules->type_report }}</p>
+                                <p>{{ $reportmodules->type_report }}</p>
                             </div>
                         </div>
                     </div>

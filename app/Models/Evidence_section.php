@@ -13,7 +13,7 @@ class Evidence_section extends Model
     protected $fillable = [
         'type_evidence',
         'description',
-        'registration',
+        'registration_date',
         'state_evidence',
 
     ];

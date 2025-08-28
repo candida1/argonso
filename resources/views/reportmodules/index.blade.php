@@ -8,7 +8,7 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Reportes</h3>
-                        <a href="{{ route('reports_modules.create') }}" class="btn btn-primary">
+                        <a href="{{ route('reportmodules.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus"> Nuevo Reporte</i>
                         </a>
                     </div>
@@ -27,26 +27,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($reports_modules as $reports_module)
+                            @foreach ($reportmodules as $reportmodule)
                                 <tr>
-                                    <td>{{ $reports_module->customer_name }}</td>
-                                    <td>{{ $reports_module->assigned_attomey }}</td>
-                                    <td>{{ $reports_module->status_case }}</td>
-                                    <td>{{ $reports_module->date_writting }}</td>
-                                    <td>{{ $reports_module->type_report }}</td>
+                                    <td>{{ $reportmodule->customer_name }}</td>
+                                    <td>{{ $reportmodule->assigned_attomey }}</td>
+                                    <td>{{ $reportmodule->status_case }}</td>
+                                    <td>{{ $reportmodule->date_writting }}</td>
+                                    <td>{{ $reportmodule->type_report }}</td>
 
 
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
-                                        <a href="{{ route('reports_modules.show', $reports_module->id) }}"
+                                        <a href="{{ route('reportmodules.show', $reportmodule->id) }}"
                                             class="btn btn-primary btn-sm" style="margin-right: 5px;">
                                             <i class="fas fa-eye">Mostrar</i>
                                         </a>
-                                        <a href="{{ route('reports_modules.edit', $reports_module->id) }}" class="btn btn-info btn-sm"
+                                        <a href="{{ route('reportmodules.edit', $reportmodule->id) }}" class="btn btn-info btn-sm"
                                             style="margin-right: 5px">
                                             <i class="fas fa-edit">Editar</i>
                                         </a>
-                                        <form action="{{ route('reports_modules.destroy', $reports_module->id) }}" method="POST"
+                                        <form action="{{ route('reportmodules.destroy', $reportmodule->id) }}" method="POST"
                                             style="display: inline-block; margin: 0; display: flex; align-items: center;"
                                             onsubmit="return confirm('¿Está seguro que desea eliminar este modulo de reportes? Esta acción no se puede deshacer.')">
                                             @csrf
@@ -64,7 +64,7 @@
 
                 <div class="card-footer py-4">
                     <nav aria-label="..." class="d-flex flex-wrap justify-content-center justify-content-lg-start">
-                        {{ $reports_modules->links() }}
+                        {{ $reportmodules->links() }}
                     </nav>
                 </div>
             </div>

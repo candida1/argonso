@@ -98,7 +98,7 @@
                                 <label for="name" class="form-control-label">
                                     <i class="fas fa-user">Nombre del cliente</i>
                                 </label>
-                                <p>{{ $case_customers->customers->name }}</p>
+                                <p>{{ $case_customers->customer->name }}</p>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                                 <label for="name" class="form-control-label">
                                     <i class="fas fa-user">Nombre del abogado</i>
                                 </label>
-                                <p>{{ $case_customers->lawyers->name }}</p>
+                                <p>{{ $case_customers->lawyer->name }}</p>
                             </div>
                         </div>
                     </div>

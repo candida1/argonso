@@ -83,10 +83,10 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="case_customer_id">Cliente</label>
+                <label class="form-control-label" for="case_customer_id">Caso cliente</label>
                 <select name="case_customer_id" id="case_customer_id" class="form-control">
                     @foreach($case_customers as $case_customer)
-                        <option value="{{ $case_customer->id }}" {{ old('case_customer_id', $equipment->case_customer_id ?? '') == $case_customer->id ? 'selected' : '' }}>{{ $case_customer->name }}</option>
+                        <option value="{{ $case_customer->id }}" {{ old('billing_id', $billings->case_customer_id ?? '') == $case_customer->id ? 'selected' : '' }}>{{ $case_customer->file_number }}</option>
                     @endforeach
                 </select>
             </div>
@@ -98,12 +98,12 @@
 
 <hr class="my-4"/>
 
-<h6 class="heading-small text-muted mb-4">Guardar</h6>
+
 
 <div class="pl-lg-4">
     <div class="form-group">
         <button type="submit" class="btn btn-primary">
-            <i class="fas fa-save"></i>Guardar Factura
+            <i class="fas fa-save"></i> Guardar Factura
         </button>
     </div>
 </div>
