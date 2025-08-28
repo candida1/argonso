@@ -9,15 +9,45 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Caso del cliente</h3>
                         <div class="mt-2 mt-md-0" role="group" aria-label="Botones de acción">
-                        <a href="{{ route('case_customers.export') }}" class="btn btn-success">
-                            <i class="fas fa-file-excel">Exportar a Excel</i>
-                        <a href="{{ route('case_customers.create') }}" class="btn btn-primary">
-                            <i class="fas fa-plus">Nuevo Caso</i>
-                        </a>
+                            <!-- Botón Exportar y Crear Caso -->
+                            {{-- <a href="{{ route('case_customers.export') }}" class="btn btn-success">
+                                <i class="fas fa-file-excel"></i> Exportar a Excel
+                            </a> --}}
+                            <a href="{{ route('case_customers.create') }}" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Nuevo Caso
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- FORMULARIO DE FILTROS -->
+                    <form action="{{ route('case_customers.index') }}" method="GET" class="mt-3 d-flex flex-wrap gap-2">
+
+
+
+
+    <select name="type_case" class="form-control">
+        <option value="">Todos los tipos</option>
+        <option value="Civil" {{ request('type_case') == 'Civil' ? 'selected' : '' }}>Civil</option>
+        <option value="Penal" {{ request('type_case') == 'Penal' ? 'selected' : '' }}>Penal</option>
+        <option value="Electoral" {{ request('type_case') == 'Electoral' ? 'selected' : '' }}>Electoral</option>
+        <option value="Administrativo" {{ request('type_case') == 'Administrativo' ? 'selected' : '' }}>Administrativo</option>
+    </select>
+
+    <!-- Botón solo para filtrar la tabla -->
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-filter"></i> Filtrar
+    </button>
+
+    <!-- Botón para exportar filtrado a Excel -->
+    <a href="{{ route('case_customers.export', request()->all()) }}" class="btn btn-success">
+        <i class="fas fa-file-excel"></i> Exportar filtrado
+    </a>
+</form>
+
+                    <!-- FIN FORMULARIO DE FILTROS -->
                 </div>
 
-                <div class="table-responsive">
+                <div class="table-responsive mt-3">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
@@ -27,7 +57,7 @@
                                 <th scope="col">Estado de caso</th>
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Prioridad</th>
-                                <th scope="col">cliente</th>
+                                <th scope="col">Cliente</th>
                                 <th scope="col">Abogado</th>
                                 <th scope="col">Acciones</th>
                             </tr>
@@ -43,7 +73,6 @@
                                     <td>{{ $case_customer->priority }}</td>
                                     <td>{{ $case_customer->customer->name }}</td>
                                     <td>{{ $case_customer->lawyer->name }}</td>
-
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
                                         <a href="{{ route('case_customers.show', $case_customer->id) }}"
@@ -78,6 +107,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection

@@ -16,11 +16,27 @@ class Case_customerController
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $case_customers= Case_customer::with ('customer','lawyer')->paginate(10);
-        return view ('case_customers.index',compact('case_customers'));
+    public function index(Request $request)
+{
+    $query = Case_customer::with(['customer','lawyer']);
+
+    if ($request->filled('status')) {
+        $query->where('status_case', $request->status);
     }
+
+    if ($request->filled('customer_id')) {
+        $query->where('customer_id', $request->customer_id);
+    }
+
+    if ($request->filled('type_case')) {
+        $query->where('type_case', $request->type_case);
+    }
+
+    $case_customers = $query->paginate(10)->withQueryString();
+    $customers = Customer::all();
+
+    return view('case_customers.index', compact('case_customers', 'customers'));
+}
 
     /**
      * Show the form for creating a new resource.
@@ -86,8 +102,12 @@ class Case_customerController
         return redirect()->route('case_customers.index')->with('deleted','El caso del cliente ha sido eliminada con éxito');
     }
 
-    public function exportExcel()
-    {
-        return Excel::download(new Case_customerExport, 'case_customers.xlsx');
-    }
+   public function exportExcel(Request $request)
+{
+
+    $typeCase   = $request->input('type_case');
+
+    return Excel::download(new Case_customerExport($typeCase), 'case_customers.xlsx');
+}
+
 }
