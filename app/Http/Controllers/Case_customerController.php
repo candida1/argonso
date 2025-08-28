@@ -8,6 +8,9 @@ use App\Http\Requests\Case_customerRequest;
 use App\Models\Customer;
 use App\Models\Lawyer;
 
+use App\Exports\Case_customerExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class Case_customerController
 {
     /**
@@ -81,5 +84,10 @@ class Case_customerController
         $case_customers= case_customer::find($id);
         $case_customers->delete();
         return redirect()->route('case_customers.index')->with('deleted','El caso del cliente ha sido eliminada con éxito');
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new Case_customerExport, 'case_customers.xlsx');
     }
 }

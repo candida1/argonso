@@ -8,6 +8,9 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Caso del cliente</h3>
+                        <div class="mt-2 mt-md-0" role="group" aria-label="Botones de acción">
+                        <a href="{{ route('case_customers.export') }}" class="btn btn-success">
+                            <i class="fas fa-file-excel">Exportar a Excel</i>
                         <a href="{{ route('case_customers.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus">Nuevo Caso</i>
                         </a>
@@ -24,6 +27,8 @@
                                 <th scope="col">Estado de caso</th>
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Prioridad</th>
+                                <th scope="col">cliente</th>
+                                <th scope="col">Abogado</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
@@ -36,6 +41,8 @@
                                     <td>{{ $case_customer->status_case }}</td>
                                     <td>{{ $case_customer->description }}</td>
                                     <td>{{ $case_customer->priority }}</td>
+                                    <td>{{ $case_customer->customer->name }}</td>
+                                    <td>{{ $case_customer->lawyer->name }}</td>
 
 
                                     <td style="white-space: nowrap; display: flex; align-items: center;">

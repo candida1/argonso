@@ -15,11 +15,16 @@ use App\Http\Controllers\Change_historyController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\Evidence_sectionController;
 
-
+use App\Exports\Case_customerExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 
 use Illuminate\Support\Facades\Route;
+
+Route::get('/export-case-customers', function () {
+    return Excel::download(new Case_customerExport, 'case_customers.xlsx');
+})->middleware(['auth', 'verified'])->name('case_customers.export');
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,6 +65,10 @@ Route::middleware('auth')->group(function () {
       Route::resource('change_histories', Change_historyController::class);
       Route::resource('documents', DocumentController::class);
       Route::resource('evidence_sections', Evidence_sectionController::class);
+
+
+
+
 });
 
 
